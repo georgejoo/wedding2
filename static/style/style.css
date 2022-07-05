@@ -231,6 +231,7 @@ h1, h2, h3, h4, h5, h6, figure {
   background-position: top center;
   background-repeat: no-repeat;
   position: relative;
+
 }
 
 .fh5co-bg {
@@ -298,7 +299,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 .fh5co-cover {
-  height: 1370px;
+  height: 1600px;
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
@@ -840,6 +841,17 @@ form label {
   padding: 0;
   color: white;
 }
+
+#fh5co-header2 .display-tc h1, #fh5co-header2 .display-tc h2
+{
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: "Work Sans", serif;
+  line-height: 1.5;
+  font-size: 25px;
+}
+
 #fh5co-header .display-tc h1,
 #fh5co-counter .display-tc h1,
 .fh5co-cover .display-tc h1 {
