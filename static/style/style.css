@@ -18,7 +18,9 @@ body {
   color: #828282;
   background: #fff;
 }
-
+textarea {
+    resize: none;
+}
 #page {
   position: relative;
   overflow-x: hidden;
@@ -296,7 +298,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 .fh5co-cover {
-  height: 900px;
+  height: 1370px;
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
@@ -355,7 +357,7 @@ h1, h2, h3, h4, h5, h6, figure {
 
 #fh5co-counter,
 #fh5co-event {
-  height: 850px;
+  height: 1000px;
   float: left;
 }
 #fh5co-counter .display-t,

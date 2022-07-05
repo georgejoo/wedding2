@@ -18,14 +18,23 @@ def response():
 
 @app.route('/handle_data', methods=['POST'])
 def handle_data():
-    name = request.form['name']
-    number_of_people = request.form['number_of_people']
-    print(name, number_of_people)
-    flash("Confirmarea a fost trimisa!", category="info")
-    report_to_db.add_confirmation([name, number_of_people])
-    #return render_template("index.html")
-    return redirect("./")
+    names = request.form.getlist("field_name[]")
+    message = request.form['text']
+    confirmation = request.form.get('particip')
+    if confirmation is None:
+        confirmation = request.form.get('nu particip')
+    if confirmation == "False":
+        flash("Mulțumim pentru răspunsul tău!", category="info")
+        report_to_db.add_confirmation(["\n".join(names), message], confirmation)
+        return redirect("./")
+    elif confirmation == "True":
+        flash("Confirmarea a fost trimisă, ne vedem la nuntă!", category="info")
+        report_to_db.add_confirmation(["\n".join(names), message], confirmation)
+        return redirect("./")
+    else:
+        return redirect("./")
     # your code
+
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5000)

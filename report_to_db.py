@@ -10,8 +10,13 @@ scopes = [
 credentials = ServiceAccountCredentials.from_json_keyfile_name("wedding_report.json", scopes) #access the json key you downloaded earlier
 file = gspread.authorize(credentials) # authenticate the JSON key with gspread
 sheet = file.open("Invitatii")  #open sheet
-sheet = sheet.sheet1
+
+sheet2 = sheet.worksheet("nu particip")
+sheet1 = sheet.worksheet("Particip")
 
 
-def add_confirmation(confirmation):
-    sheet.append_row(confirmation)
+def add_confirmation(confirmation, response):
+    if response == "True":
+        sheet1.append_row(confirmation)
+    else:
+        sheet2.append_row(confirmation)
